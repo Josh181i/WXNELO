@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Muebles Modulares WXNLO</title>
+  <title>Muebles Modulares WXNELO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
@@ -14,29 +14,35 @@
   <style>
     /* ===== VARIABLES ===== */
     :root {
-      --cream: #F5F0E8;
-      --warm-white: #FDFAF5;
-      --charcoal: #1C1C1C;
-      --dark: #111010;
-      --gold: #C9A96E;
-      --gold-light: #E2C99A;
-      --gold-dark: #9B7A45;
-      --muted: #7A7268;
-      --border: rgba(201,169,110,0.25);
-      --glass: rgba(253,250,245,0.06);
-      --font-display: 'Cormorant Garamond', serif;
-      --font-body: 'DM Sans', sans-serif;
-    }
+  --soft-ivory: #F5F2EC;
+  --natural-stone: #B7A996;
+  --cozy-walnut: #8C7864;
+  --warm-greige: #D9D2C6;
+  --cream: #8C7864;
+  --warm-white: #8C7864;
+  --charcoal: #B7A996;
+  --dark: #F5F2EC;
+  --gold: #B7A996;
+  --gold-light: #D9D2C6;
+  --gold-dark: #8C7864;
+  --muted: #8C7864;
+  --border: rgba(140, 120, 100, 0.22);
+  --glass: rgba(245, 242, 236, 0.72);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ink: #6F5F51;
+}
 
     /* ===== RESET ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--font-body);
-      background: var(--dark);
+      background: var(--soft-ivory);
       color: var(--cream);
       overflow-x: hidden;
       cursor: none;
+      line-height: 1.5;
     }
 
     /* ===== CUSTOM CURSOR ===== */
@@ -73,13 +79,13 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 9998;
-      opacity: 0.35;
+      opacity: 0.08;
     }
 
     /* ===== LOADER ===== */
     #loader {
       position: fixed; inset: 0;
-      background: var(--dark);
+      background: var(--soft-ivory);
       z-index: 99997;
       display: flex;
       flex-direction: column;
@@ -125,7 +131,7 @@
       transition: background 0.4s, padding 0.4s, backdrop-filter 0.4s;
     }
     nav.scrolled {
-      background: rgba(17,16,16,0.92);
+      background: rgba(245,242,236,0.92);
       backdrop-filter: blur(20px);
       padding: 14px 60px;
       border-bottom: 1px solid var(--border);
@@ -198,7 +204,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(17,16,16,0.98);
+      background: rgba(245,242,236,0.98);
       z-index: 999;
       flex-direction: column;
       align-items: center;
@@ -227,7 +233,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, #0d0c0c 0%, #1a1712 40%, #0f0e0c 100%);
+      background: linear-gradient(135deg, var(--soft-ivory) 0%, var(--warm-greige) 45%, var(--natural-stone) 100%);
     }
     .hero-bg-accent {
       position: absolute;
@@ -485,7 +491,7 @@
     /* ===== ABOUT / FEATURES ===== */
     #about {
       padding: 120px 60px;
-      background: linear-gradient(180deg, var(--dark) 0%, #161410 100%);
+      background: linear-gradient(180deg, var(--soft-ivory) 0%, var(--warm-greige) 100%);
     }
     .features-grid {
       display: grid;
@@ -537,7 +543,7 @@
     /* ===== CATALOG ===== */
     #catalog {
       padding: 120px 60px;
-      background: #0e0d0b;
+      background: linear-gradient(180deg, var(--soft-ivory) 0%, var(--warm-greige) 100%);
     }
     .catalog-filters {
       display: flex;
@@ -572,7 +578,7 @@
       margin: 0 auto;
     }
     .product-card {
-      background: rgba(253,250,245,0.02);
+      background: rgba(245,242,236,0.78);
       border: 1px solid var(--border);
       overflow: hidden;
       transition: transform 0.4s, box-shadow 0.4s;
@@ -586,7 +592,7 @@
       position: relative;
       overflow: hidden;
       aspect-ratio: 4/3;
-      background: #1a1812;
+      background: var(--warm-greige);
     }
     .product-img-wrap img {
       width: 100%; height: 100%;
@@ -689,7 +695,7 @@
 
     /* Loading skeleton */
     .product-skeleton {
-      background: rgba(253,250,245,0.02);
+      background: rgba(245,242,236,0.78);
       border: 1px solid var(--border);
       overflow: hidden;
     }
@@ -701,7 +707,7 @@
     /* ===== PROCESS ===== */
     #process {
       padding: 120px 60px;
-      background: var(--dark);
+      background: var(--soft-ivory);
     }
     .process-steps {
       display: grid;
@@ -735,7 +741,7 @@
       font-size: 1.3rem;
       font-weight: 300;
       color: var(--gold);
-      background: var(--dark);
+      background: var(--soft-ivory);
       position: relative;
       z-index: 1;
       transition: background 0.3s, color 0.3s;
@@ -755,82 +761,10 @@
       font-weight: 300;
     }
 
-    /* ===== TESTIMONIALS ===== */
-    #testimonials {
-      padding: 120px 60px;
-      background: #0e0d0b;
-      overflow: hidden;
-    }
-    .testimonials-track {
-      display: flex;
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .testimonial-card {
-      flex: 1;
-      padding: 40px;
-      border: 1px solid var(--border);
-      background: var(--glass);
-      position: relative;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .testimonial-card:hover { border-color: rgba(201,169,110,0.4); transform: translateY(-4px); }
-    .testimonial-quote {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      color: var(--gold);
-      line-height: 0.8;
-      margin-bottom: 20px;
-      opacity: 0.4;
-    }
-    .testimonial-text {
-      font-size: 0.9rem;
-      color: var(--cream);
-      line-height: 1.9;
-      font-weight: 300;
-      font-style: italic;
-      margin-bottom: 28px;
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .author-avatar {
-      width: 42px; height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1rem;
-      color: var(--dark);
-      font-weight: 600;
-    }
-    .author-name {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--warm-white);
-    }
-    .author-location {
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
-    .testimonial-stars {
-      position: absolute;
-      top: 40px; right: 40px;
-      color: var(--gold);
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-    }
-
     /* ===== CONTACT / CTA ===== */
     #contact {
       padding: 120px 60px;
-      background: linear-gradient(135deg, #0f0e0c 0%, #1a1712 50%, #0f0e0c 100%);
+      background: linear-gradient(135deg, var(--soft-ivory) 0%, var(--warm-greige) 50%, var(--natural-stone) 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -902,7 +836,7 @@
 
     /* ===== FOOTER ===== */
     footer {
-      background: #080807;
+      background: var(--soft-ivory);
       border-top: 1px solid var(--border);
       padding: 70px 60px 40px;
     }
@@ -1027,7 +961,7 @@
     }
     #admin-modal.open { display: flex; align-items: flex-start; justify-content: center; }
     .admin-container {
-      background: #141210;
+      background: var(--soft-ivory);
       border: 1px solid var(--border);
       width: 100%;
       max-width: 900px;
@@ -1086,7 +1020,7 @@
     .admin-field input, .admin-field select, .admin-field textarea {
       width: 100%;
       padding: 12px 16px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(245,242,236,0.9);
       border: 1px solid var(--border);
       color: var(--cream);
       font-family: var(--font-body);
@@ -1098,7 +1032,7 @@
       border-color: var(--gold);
     }
     .admin-field textarea { resize: vertical; min-height: 90px; }
-    .admin-field select option { background: #141210; }
+    .admin-field select option { background: var(--soft-ivory); }
     .admin-btn {
       display: inline-flex;
       align-items: center;
@@ -1235,6 +1169,22 @@
     }
     .progress-text { font-size: 0.75rem; color: var(--muted); margin-top: 8px; }
 
+
+    body, .feature-text, .section-subtitle, .hero-subtitle, .contact-sub, .footer-brand-text, .footer-col a, .product-desc, .step-text, .admin-field label, .upload-text, .progress-text, .footer-copy {
+      color: var(--cozy-walnut);
+    }
+    .nav-links a, .mobile-menu a, .phone-link, .footer-admin-link, .admin-product-name, .product-name, .feature-title, .step-title, .section-title, .contact-title, .admin-login-title {
+      color: var(--cozy-walnut);
+    }
+    .mobile-menu a { color: var(--cozy-walnut); }
+    .hero-title em, .section-title em, .contact-title em, .nav-logo, .footer-brand-logo, .admin-title, .hero-tag, .section-tag, .product-category, .product-price, .stat-num, .feature-icon {
+      color: var(--cozy-walnut);
+    }
+    .admin-container, .toast, .product-card, .product-skeleton, .feature-card, .phone-link, .admin-product-row, .upload-area, .admin-field input, .admin-field select, .admin-field textarea {
+      box-shadow: 0 16px 38px rgba(140, 120, 100, 0.08);
+    }
+    .overlay-whatsapp, .whatsapp-big { border-radius: 0; }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -1248,11 +1198,10 @@
       .hamburger { display: flex; }
       .hero-content { padding: 120px 24px 80px; }
       .hero-stats { display: none; }
-      #about, #catalog, #process, #testimonials, #contact { padding: 80px 24px; }
+      #about, #catalog, #process, #contact { padding: 80px 24px; }
       .features-grid { grid-template-columns: 1fr; }
       .feature-card { border-right: none; border-bottom: 1px solid var(--border); }
       .products-grid { grid-template-columns: 1fr; }
-      .testimonials-track { flex-direction: column; }
       footer { padding: 50px 24px 30px; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .hero-scroll { left: 24px; }
@@ -1269,18 +1218,17 @@
 
 <!-- LOADER -->
 <div id="loader">
-  <div class="loader-logo">WXNLO</div>
+  <div class="loader-logo">WXNELO</div>
   <div class="loader-bar"></div>
 </div>
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">WXNLO</a>
+  <a href="#hero" class="nav-logo">WXNELO</a>
   <ul class="nav-links">
     <li><a href="#about">Nosotros</a></li>
     <li><a href="#catalog">Catálogo</a></li>
     <li><a href="#process">Proceso</a></li>
-    <li><a href="#testimonials">Testimonios</a></li>
     <li><a href="#contact" class="nav-cta">Cotizar</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
@@ -1293,7 +1241,6 @@
   <a href="#about" onclick="closeMobile()">Nosotros</a>
   <a href="#catalog" onclick="closeMobile()">Catálogo</a>
   <a href="#process" onclick="closeMobile()">Proceso</a>
-  <a href="#testimonials" onclick="closeMobile()">Testimonios</a>
   <a href="#contact" onclick="closeMobile()">Cotizar</a>
 </div>
 
@@ -1305,20 +1252,20 @@
     <div class="hero-grid"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-tag">Muebles Modulares · Diseño Premium</div>
-    <h1 class="hero-title">
+    <div class="hero-tag" id="heroTagText">Muebles modulares · Costa Rica</div>
+    <h1 class="hero-title" id="heroTitleText">
       Transforma<br/>
       tu <em>espacio</em><br/>
-      con estilo
+      a tu medida
     </h1>
-    <p class="hero-subtitle">
-      Colores modernos, funcionales y hechos a tu medida. Cada pieza es un reflejo de tu personalidad.
+    <p class="hero-subtitle" id="heroSubtitleText">
+      Muebles modulares modernos, funcionales y hechos a tu medida en Costa Rica. Cotiza sin compromiso y conversa directo por WhatsApp.
     </p>
     <div class="hero-actions">
       <a href="#catalog" class="btn-primary">
         <i class="fas fa-th-large"></i> Ver Catálogo
       </a>
-      <a href="#contact" class="btn-outline">
+      <a href="https://wa.me/50664265787?text=Hola%20WXNELO%2C%20quiero%20cotizar%20sin%20compromiso" class="btn-outline" target="_blank">
         <i class="fas fa-comment-dots"></i> Cotizar sin compromiso
       </a>
     </div>
@@ -1364,9 +1311,9 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="section-header reveal">
-    <div class="section-tag">¿Por qué WXNLO?</div>
-    <h2 class="section-title">Diseño que <em>inspira</em></h2>
-    <p class="section-subtitle">Creamos espacios que cuentan tu historia con cada detalle.</p>
+    <div class="section-tag" id="aboutTagText">¿Por qué WXNELO?</div>
+    <h2 class="section-title" id="aboutTitleText">Diseño modular que <em>inspira</em></h2>
+    <p class="section-subtitle" id="aboutSubtitleText">Creamos muebles modulares elegantes, funcionales y pensados para aprovechar cada espacio.</p>
     <div class="section-line"></div>
   </div>
   <div class="features-grid reveal">
@@ -1391,9 +1338,9 @@
 <!-- CATALOG -->
 <section id="catalog">
   <div class="section-header reveal">
-    <div class="section-tag">Nuestros Productos</div>
-    <h2 class="section-title">El <em>catálogo</em></h2>
-    <p class="section-subtitle">Explora nuestra colección. Cada pieza es única.</p>
+    <div class="section-tag" id="catalogTagText">Nuestros productos</div>
+    <h2 class="section-title" id="catalogTitleText">Nuestro <em>catálogo</em></h2>
+    <p class="section-subtitle" id="catalogSubtitleText">Explora muebles modulares con precios en colones y cotización directa por WhatsApp.</p>
     <div class="section-line"></div>
   </div>
   <div class="catalog-filters reveal" id="filterBtns">
@@ -1411,7 +1358,7 @@
     <div class="product-skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
   </div>
   <div style="text-align:center;margin-top:48px;" class="reveal">
-    <a href="#contact" class="btn-outline" style="font-size:0.8rem;">
+    <a href="https://wa.me/50664265787?text=Hola%20WXNELO%2C%20necesito%20un%20mueble%20a%20medida" class="btn-outline" style="font-size:0.8rem;" target="_blank">
       <i class="fas fa-plus"></i> ¿No encuentras lo que buscas? Cotiza a medida
     </a>
   </div>
@@ -1420,9 +1367,9 @@
 <!-- PROCESS -->
 <section id="process">
   <div class="section-header reveal">
-    <div class="section-tag">¿Cómo funciona?</div>
-    <h2 class="section-title">Tu mueble en <em>4 pasos</em></h2>
-    <p class="section-subtitle">Un proceso transparente del inicio al final.</p>
+    <div class="section-tag" id="processTagText">¿Cómo funciona?</div>
+    <h2 class="section-title" id="processTitleText">Tu mueble en <em>4 pasos</em></h2>
+    <p class="section-subtitle" id="processSubtitleText">Te acompañamos desde la idea inicial hasta la instalación final.</p>
     <div class="section-line"></div>
   </div>
   <div class="process-steps reveal">
@@ -1449,74 +1396,28 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-header reveal">
-    <div class="section-tag">Lo que dicen</div>
-    <h2 class="section-title">Clientes <em>felices</em></h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="testimonials-track reveal">
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">Quedé encantada con mi cocina integral. Los acabados son de primera y el equipo fue muy profesional durante toda la instalación.</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">M</div>
-        <div>
-          <div class="author-name">María González</div>
-          <div class="author-location">Guadalajara</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">El clóset que me hicieron aprovecha cada centímetro del espacio. Moderno, elegante y exactamente lo que imaginaba. 100% recomendados.</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">C</div>
-        <div>
-          <div class="author-name">Carlos Mendoza</div>
-          <div class="author-location">Ciudad de México</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">Mi sala quedó espectacular. Los muebles modulares se adaptaron perfectamente al espacio y los colores son exactamente los que pedí.</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">A</div>
-        <div>
-          <div class="author-name">Ana Ramírez</div>
-          <div class="author-location">Monterrey</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-content">
-    <div class="section-tag reveal" style="justify-content:center;">Cotiza ahora</div>
-    <h2 class="contact-title reveal">
-      Hagamos realidad<br/>tu <em>espacio ideal</em>
+    <div class="section-tag reveal" style="justify-content:center;" id="contactTagText">Cotiza ahora</div>
+    <h2 class="contact-title reveal" id="contactTitleText">
+      Hagamos realidad<br/>tu <em>mueble ideal</em>
     </h2>
-    <p class="contact-sub reveal">
-      Sin compromisos. Solo platícanos tu idea y te damos una propuesta personalizada.
+    <p class="contact-sub reveal" id="contactSubtitleText">
+      Estamos en Costa Rica. Escríbenos y te ayudamos a cotizar tu mueble modular sin compromiso.
     </p>
     <div class="contact-phones reveal">
-      <a href="tel:6426265787" class="phone-link">
-        <i class="fas fa-phone"></i> 64-26-5787
+      <a href="tel:+50664265787" class="phone-link">
+        <i class="fas fa-phone"></i> +506 6426-5787
       </a>
-      <a href="tel:7020204792" class="phone-link">
-        <i class="fas fa-phone"></i> 70-20-4792
+      <a href="tel:+50670204792" class="phone-link">
+        <i class="fas fa-phone"></i> +506 7020-4792
       </a>
     </div>
-    <a href="https://wa.me/526426265787?text=Hola%20WXNLO%2C%20quiero%20cotizar%20sin%20compromiso%20%F0%9F%8F%A0" class="whatsapp-big reveal" target="_blank">
+    <a href="https://wa.me/50664265787?text=Hola%20WXNELO%2C%20quiero%20cotizar%20sin%20compromiso%20%F0%9F%8F%A0" class="whatsapp-big reveal" target="_blank">
       <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
-      Cotizar por WhatsApp ahora
+      Cotizar por WhatsApp
     </a>
   </div>
 </section>
@@ -1525,22 +1426,16 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <span class="footer-brand-logo">WXNLO</span>
+      <span class="footer-brand-logo">WXNELO</span>
       <p class="footer-brand-text">
-        Muebles modulares de diseño moderno, funcionales y hechos a tu medida. Transformamos tu espacio con estilo y calidad.
+        Muebles modulares modernos, funcionales y hechos a tu medida en Costa Rica. Diseñamos soluciones elegantes para hogar, oficina y proyectos personalizados.
       </p>
       <div class="footer-socials">
-        <a href="https://www.instagram.com/muebleswxnelo?igsh=MWx5cWN1Yjc3Mjduaw==" target="_blank" class="social-link" title="Instagram">
+        <a href="https://www.instagram.com/muebleswxnelo?igsh=MTM0ZWd3bHlhbGVmYg==" target="_blank" class="social-link" title="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://facebook.com/wxnlo" target="_blank" class="social-link" title="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://wa.me/526426265787?text=Hola%20WXNLO%2C%20quiero%20información" target="_blank" class="social-link" title="WhatsApp">
+        <a href="https://wa.me/50664265787?text=Hola%20WXNELO%2C%20quiero%20informaci%C3%B3n" target="_blank" class="social-link" title="WhatsApp">
           <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://tiktok.com/@wxnlo" target="_blank" class="social-link" title="TikTok">
-          <i class="fab fa-tiktok"></i>
         </a>
       </div>
     </div>
@@ -1550,8 +1445,7 @@
         <li><a href="#about">Nosotros</a></li>
         <li><a href="#catalog">Catálogo</a></li>
         <li><a href="#process">Proceso</a></li>
-        <li><a href="#testimonials">Testimonios</a></li>
-        <li><a href="#contact">Contacto</a></li>
+            <li><a href="#contact">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1567,15 +1461,15 @@
     <div class="footer-col">
       <div class="footer-col-title">Contacto</div>
       <ul>
-        <li><a href="tel:6426265787"><i class="fas fa-phone" style="margin-right:8px;color:var(--gold);font-size:0.7rem;"></i>64-26-5787</a></li>
-        <li><a href="tel:7020204792"><i class="fas fa-phone" style="margin-right:8px;color:var(--gold);font-size:0.7rem;"></i>70-20-4792</a></li>
-        <li><a href="https://wa.me/526426265787" target="_blank"><i class="fab fa-whatsapp" style="margin-right:8px;color:var(--gold);font-size:0.8rem;"></i>WhatsApp</a></li>
-        <li><a href="https://www.instagram.com/muebleswxnelo?igsh=MWx5cWN1Yjc3Mjduaw==" target="_blank"><i class="fab fa-instagram" style="margin-right:8px;color:var(--gold);font-size:0.8rem;"></i>Instagram</a></li>
+        <li><a href="tel:+50664265787"><i class="fas fa-phone" style="margin-right:8px;color:var(--gold);font-size:0.7rem;"></i>64-26-5787</a></li>
+        <li><a href="tel:+50670204792"><i class="fas fa-phone" style="margin-right:8px;color:var(--gold);font-size:0.7rem;"></i>70-20-4792</a></li>
+        <li><a href="https://wa.me/50664265787" target="_blank"><i class="fab fa-whatsapp" style="margin-right:8px;color:var(--gold);font-size:0.8rem;"></i>WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/muebleswxnelo?igsh=MTM0ZWd3bHlhbGVmYg==" target="_blank"><i class="fab fa-instagram" style="margin-right:8px;color:var(--gold);font-size:0.8rem;"></i>Instagram</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 Muebles Modulares WXNLO. Todos los derechos reservados.</span>
+    <span class="footer-copy">© 2025 Muebles Modulares WXNELO. Todos los derechos reservados.</span>
     <a href="#" class="footer-admin-link" onclick="openAdmin(event)">
       <i class="fas fa-lock" style="margin-right:6px;"></i>Admin
     </a>
@@ -1592,7 +1486,7 @@
 <div id="admin-modal">
   <div class="admin-container">
     <div class="admin-header">
-      <span class="admin-title">Panel Administrador · WXNLO</span>
+      <span class="admin-title">Panel Administrador · WXNELO</span>
       <button class="admin-close" onclick="closeAdmin()"><i class="fas fa-times"></i></button>
     </div>
 
@@ -1617,6 +1511,7 @@
       <div class="admin-nav">
         <button class="admin-tab active" onclick="switchTab('upload', this)"><i class="fas fa-upload"></i> Subir Producto</button>
         <button class="admin-tab" onclick="switchTab('manage', this)"><i class="fas fa-th-list"></i> Gestionar</button>
+        <button class="admin-tab" onclick="switchTab('content', this)"><i class="fas fa-pen"></i> Contenido</button>
         <button class="admin-tab" onclick="doLogout()" style="margin-left:auto;color:#e05252;border-color:#e05252;"><i class="fas fa-sign-out-alt"></i> Salir</button>
       </div>
 
@@ -1632,7 +1527,7 @@
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div class="admin-field">
             <label>Nombre del producto *</label>
-            <input type="text" id="prodName" placeholder="Ej: Closet Modular Elegance"/>
+            <input type="text" id="prodName" placeholder="Ej: Clóset Modular Elegance"/>
           </div>
           <div class="admin-field">
             <label>Categoría</label>
@@ -1651,8 +1546,8 @@
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div class="admin-field">
-            <label>Precio (MXN) *</label>
-            <input type="number" id="prodPrice" placeholder="Ej: 8500"/>
+            <label>Precio (CRC) *</label>
+            <input type="number" id="prodPrice" placeholder="Ej: 85000"/>
           </div>
           <div class="admin-field">
             <label>Badge / Etiqueta</label>
@@ -1681,6 +1576,56 @@
           <p style="color:var(--muted);font-size:0.85rem;">Cargando productos...</p>
         </div>
       </div>
+
+      <!-- CONTENT TAB -->
+      <div class="admin-tab-content" id="tab-content">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap;">
+          <p style="font-size:0.82rem;color:var(--muted);">Edita los textos principales del sitio y guárdalos.</p>
+          <button class="admin-btn" onclick="saveSiteContent()" style="padding:8px 16px;font-size:0.72rem;">
+            <i class="fas fa-save"></i> Guardar textos
+          </button>
+        </div>
+        <div class="admin-field">
+          <label>Nombre de la marca</label>
+          <input type="text" id="siteBrandName" placeholder="Muebles Modulares WXNELO"/>
+        </div>
+        <div class="admin-field">
+          <label>Hero · etiqueta</label>
+          <input type="text" id="siteHeroTag" placeholder="Muebles modulares · Costa Rica"/>
+        </div>
+        <div class="admin-field">
+          <label>Hero · título (puedes usar &lt;br/&gt; y &lt;em&gt;)</label>
+          <textarea id="siteHeroTitle" style="min-height:110px;"></textarea>
+        </div>
+        <div class="admin-field">
+          <label>Hero · subtítulo</label>
+          <textarea id="siteHeroSubtitle"></textarea>
+        </div>
+        <div class="admin-field">
+          <label>Nosotros · subtítulo</label>
+          <textarea id="siteAboutSubtitle"></textarea>
+        </div>
+        <div class="admin-field">
+          <label>Catálogo · subtítulo</label>
+          <textarea id="siteCatalogSubtitle"></textarea>
+        </div>
+        <div class="admin-field">
+          <label>Proceso · subtítulo</label>
+          <textarea id="siteProcessSubtitle"></textarea>
+        </div>
+        <div class="admin-field">
+          <label>Contacto · título (puedes usar &lt;br/&gt; y &lt;em&gt;)</label>
+          <textarea id="siteContactTitle" style="min-height:100px;"></textarea>
+        </div>
+        <div class="admin-field">
+          <label>Contacto · subtítulo</label>
+          <textarea id="siteContactSubtitle"></textarea>
+        </div>
+        <div class="admin-field">
+          <label>Footer · descripción</label>
+          <textarea id="siteFooterText"></textarea>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1690,10 +1635,10 @@
    CONFIGURACIÓN SUPABASE
    ⚠️  Reemplaza con tus credenciales reales de Supabase
 =================================================== */
-const SUPABASE_URL = 'https://TU_PROYECTO.supabase.co';
-const SUPABASE_KEY = 'TU_ANON_KEY_AQUI';
+const SUPABASE_URL = 'https://wyigjkieodopxhtzchxz.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_irVOfgHJIjJdhwAYo5oxJQ_mt8w_21X';
 const BUCKET_NAME = 'productos-wxnlo';
-const WA_NUMBER   = '526426265787'; // Número WhatsApp con lada internacional
+const WA_NUMBER   = '50664265787'; // Número WhatsApp Costa Rica
 
 // Inicializar cliente Supabase
 const { createClient } = supabase;
@@ -1702,8 +1647,8 @@ const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 /* ===================================================
    CREDENCIALES ADMIN (cámbialas)
 =================================================== */
-const ADMIN_USER = 'wxnlo_admin';
-const ADMIN_PASS = 'MueblesFuertes2025!';
+const ADMIN_USER = 'pualalamasbella@gmail.com';
+const ADMIN_PASS = 'paulaykoko';
 
 /* ===================================================
    ESTADO DE LA APP
@@ -1712,6 +1657,87 @@ let selectedFiles = [];
 let allProducts = [];
 let currentFilter = 'all';
 
+const SITE_CONTENT_KEY = 'wxnelo_site_content';
+
+const defaultSiteContent = {
+  brandName: 'Muebles Modulares WXNELO',
+  heroTag: 'Muebles modulares · Costa Rica',
+  heroTitle: 'Transforma<br/>tu <em>espacio</em><br/>a tu medida',
+  heroSubtitle: 'Muebles modulares modernos, funcionales y hechos a tu medida en Costa Rica. Cotiza sin compromiso y conversa directo por WhatsApp.',
+  aboutSubtitle: 'Creamos muebles modulares elegantes, funcionales y pensados para aprovechar cada espacio.',
+  catalogSubtitle: 'Explora muebles modulares con precios en colones y cotización directa por WhatsApp.',
+  processSubtitle: 'Te acompañamos desde la idea inicial hasta la instalación final.',
+  contactTitle: 'Hagamos realidad<br/>tu <em>mueble ideal</em>',
+  contactSubtitle: 'Estamos en Costa Rica. Escríbenos y te ayudamos a cotizar tu mueble modular sin compromiso.',
+  footerText: 'Muebles modulares modernos, funcionales y hechos a tu medida en Costa Rica. Diseñamos soluciones elegantes para hogar, oficina y proyectos personalizados.'
+};
+
+let siteContent = { ...defaultSiteContent };
+
+function loadSiteContent() {
+  try {
+    const raw = localStorage.getItem(SITE_CONTENT_KEY);
+    if (raw) siteContent = { ...defaultSiteContent, ...JSON.parse(raw) };
+  } catch (_) {}
+  applySiteContent();
+}
+
+function applySiteContent() {
+  document.title = siteContent.brandName;
+  document.querySelector('.nav-logo').textContent = 'WXNELO';
+  document.querySelector('.loader-logo').textContent = 'WXNELO';
+  document.querySelector('.footer-brand-logo').textContent = 'WXNELO';
+  document.getElementById('heroTagText').innerHTML = siteContent.heroTag;
+  document.getElementById('heroTitleText').innerHTML = siteContent.heroTitle;
+  document.getElementById('heroSubtitleText').textContent = siteContent.heroSubtitle;
+  document.getElementById('aboutSubtitleText').textContent = siteContent.aboutSubtitle;
+  document.getElementById('catalogSubtitleText').textContent = siteContent.catalogSubtitle;
+  document.getElementById('processSubtitleText').textContent = siteContent.processSubtitle;
+  document.getElementById('contactTitleText').innerHTML = siteContent.contactTitle;
+  document.getElementById('contactSubtitleText').textContent = siteContent.contactSubtitle;
+  document.querySelector('.footer-brand-text').textContent = siteContent.footerText;
+  const footerCopy = document.querySelector('.footer-copy');
+  if (footerCopy) footerCopy.textContent = `© 2025 ${siteContent.brandName}. Todos los derechos reservados.`;
+}
+
+function populateContentForm() {
+  const fields = {
+    siteBrandName: siteContent.brandName,
+    siteHeroTag: siteContent.heroTag,
+    siteHeroTitle: siteContent.heroTitle,
+    siteHeroSubtitle: siteContent.heroSubtitle,
+    siteAboutSubtitle: siteContent.aboutSubtitle,
+    siteCatalogSubtitle: siteContent.catalogSubtitle,
+    siteProcessSubtitle: siteContent.processSubtitle,
+    siteContactTitle: siteContent.contactTitle,
+    siteContactSubtitle: siteContent.contactSubtitle,
+    siteFooterText: siteContent.footerText
+  };
+  Object.entries(fields).forEach(([id, value]) => {
+    const el = document.getElementById(id);
+    if (el) el.value = value;
+  });
+}
+
+function saveSiteContent() {
+  siteContent = {
+    brandName: document.getElementById('siteBrandName').value.trim() || defaultSiteContent.brandName,
+    heroTag: document.getElementById('siteHeroTag').value.trim() || defaultSiteContent.heroTag,
+    heroTitle: document.getElementById('siteHeroTitle').value.trim() || defaultSiteContent.heroTitle,
+    heroSubtitle: document.getElementById('siteHeroSubtitle').value.trim() || defaultSiteContent.heroSubtitle,
+    aboutSubtitle: document.getElementById('siteAboutSubtitle').value.trim() || defaultSiteContent.aboutSubtitle,
+    catalogSubtitle: document.getElementById('siteCatalogSubtitle').value.trim() || defaultSiteContent.catalogSubtitle,
+    processSubtitle: document.getElementById('siteProcessSubtitle').value.trim() || defaultSiteContent.processSubtitle,
+    contactTitle: document.getElementById('siteContactTitle').value.trim() || defaultSiteContent.contactTitle,
+    contactSubtitle: document.getElementById('siteContactSubtitle').value.trim() || defaultSiteContent.contactSubtitle,
+    footerText: document.getElementById('siteFooterText').value.trim() || defaultSiteContent.footerText
+  };
+  localStorage.setItem(SITE_CONTENT_KEY, JSON.stringify(siteContent));
+  applySiteContent();
+  showToast('✅ Textos actualizados');
+}
+
+
 /* ===================================================
    LOADER
 =================================================== */
@@ -1719,6 +1745,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('loader').classList.add('hidden');
   }, 1800);
+  loadSiteContent();
   loadProducts();
   initScrollReveal();
 });
@@ -1833,7 +1860,7 @@ async function loadProducts() {
 function renderFallbackProducts() {
   const sample = [
     {
-      id: 1, name: 'Closet Modular Elegance', category: 'recamara',
+      id: 1, name: 'Clóset Modular Elegance', category: 'recamara',
       description: 'Closet a medida con organizadores inteligentes, acabado en madera premium.',
       price: 12500, badge: 'Popular',
       image_url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'
@@ -1890,7 +1917,7 @@ function renderProducts(products) {
 
   grid.innerHTML = filtered.map(p => {
     const waMsg = encodeURIComponent(
-      `Hola WXNLO! 👋\n\nEstoy interesado/a en:\n*${p.name}*\nPrecio: $${Number(p.price).toLocaleString('es-MX')} MXN\n\n✅ Disponible\n\n¿Me pueden dar más información?`
+      `Hola WXNELO 👋\n\nEstoy interesado/a en:\n*${p.name}*\nPrecio: ₡${Number(p.price).toLocaleString('es-CR')}\n\n✅ Disponible\n\n¿Me pueden dar más información?`
     );
     const imgSrc = p.image_url || 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80';
 
@@ -1911,8 +1938,8 @@ function renderProducts(products) {
         <p class="product-desc">${p.description || 'Mueble modular de alta calidad, hecho a medida.'}</p>
         <div class="product-footer">
           <div class="product-price">
-            <span class="price-currency">$</span>${Number(p.price).toLocaleString('es-MX')}
-            <span style="font-size:0.75rem;color:var(--muted);font-family:var(--font-body);"> MXN</span>
+            <span class="price-currency">₡</span>${Number(p.price).toLocaleString('es-CR')}
+            <span style="font-size:0.75rem;color:var(--muted);font-family:var(--font-body);"> CRC</span>
           </div>
           <a href="https://wa.me/${WA_NUMBER}?text=${waMsg}" target="_blank" class="product-cta">
             <i class="fab fa-whatsapp"></i> Cotizar
@@ -1980,6 +2007,7 @@ function doLogin() {
     document.getElementById('admin-dashboard').style.display = 'block';
     errEl.style.display = 'none';
     loadAdminProducts();
+    populateContentForm();
   } else {
     errEl.style.display = 'block';
     document.getElementById('loginPass').value = '';
@@ -2151,7 +2179,7 @@ async function loadAdminProducts() {
           <div class="admin-product-name">${p.name}</div>
           <div class="admin-product-cat">${getCategoryLabel(p.category)}</div>
         </div>
-        <div class="admin-product-price">$${Number(p.price).toLocaleString('es-MX')} MXN</div>
+        <div class="admin-product-price">₡${Number(p.price).toLocaleString('es-CR')} CRC</div>
         <button class="admin-btn-danger" onclick="deleteProduct('${p.id}', '${p.image_url}')">
           <i class="fas fa-trash"></i>
         </button>
